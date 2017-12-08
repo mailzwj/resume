@@ -1,0 +1,124 @@
+/*
+ * 个人页面，reset一切从简了...
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root,
+.r-wrapper {
+    height: 100%;
+}
+
+body {
+    font: 14px/1.5 Arial, '\5fae\8f6f\96c5\9ed1', sans-serif;
+    color: #333;
+}
+
+.r-wrapper {
+    background: url(./images/bg.jpg) center center no-repeat transparent;
+    background-size: cover;
+
+    .r-tab-wrapper {
+        position: fixed;
+        top: 50%;
+        left: 85px;
+        z-index: 10;
+        transform: translateY(-50%);
+        color: #fff;
+    }
+
+    .r-pan-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        .r-pan-scroller {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            -webkit-transition: top .3s ease-out;
+            -o-transition: top .3s ease-out;
+            transition: top .3s ease-out;
+        }
+    }
+}
+
+.r-tab-wrapper {
+    &:after {
+        position: absolute;
+        top: 12px;
+        bottom: 12px;
+        left: 5px;
+        content: '';
+        width: 2px;
+        background-color: #fff;
+    }
+
+    .r-tab-item {
+        position: relative;
+        margin-top: 50px;
+        margin-left: 27px;
+        padding: 0 15px;
+        height: 24px;
+        line-height: 24px;
+        border-radius: 12px;
+        background-color: rgba(0, 0, 0, .2);
+        cursor: pointer;
+        -webkit-transition: background-color .2s ease-out;
+        -o-transition: background-color .2s ease-out;
+        transition: background-color .2s ease-out;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:before,
+        &:after {
+            position: absolute;
+            content: '';
+            top: 50%;
+            background-color: #fff;
+        }
+
+        &:before {
+            left: -27px;
+            z-index: 1;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+
+        &:after {
+            left: -15px;
+            z-index: 2;
+            height: 1px;
+            width: 15px;
+            border-radius: 1px;
+        }
+
+        &:hover,
+        &.active {
+            background-color: rgba(0, 0, 0, .5);
+        }
+    }
+}
+
+.abs-center {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
