@@ -112,12 +112,12 @@ if (!root) {
 var bgObj = new Image();
 bgObj.src = bg;
 
+render(<App />, root);
+
 if (bgObj.complete) {
     document.body.className = 'loaded';
-    render(<App />, root);
 } else {
     bgObj.onload = () => {
         document.body.className = 'loaded';
-        render(<App />, root);
     };
 }
