@@ -7,6 +7,7 @@ import Skill from './components/Skill';
 import Interests from './components/Interests';
 
 import less from './index.less';
+import bg from './images/bg.jpg';
 
 class App extends Component {
     constructor() {
@@ -108,4 +109,15 @@ if (!root) {
     document.body.appendChild(root);
 }
 
-render(<App />, root);
+var bgObj = new Image();
+bgObj.src = bg;
+
+if (bgObj.complete) {
+    document.body.className = 'loaded';
+    render(<App />, root);
+} else {
+    bgObj.onload = () => {
+        document.body.className = 'loaded';
+        render(<App />, root);
+    };
+}

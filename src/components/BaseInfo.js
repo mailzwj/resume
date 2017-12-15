@@ -43,6 +43,7 @@ class BaseInfo extends Component {
                             <p>微信：mailzwj<span className="qr-thumb" onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut}>{this.state.qrcode ? <img src={qrcode} /> : ''}</span></p>
                             <p>QQ：327417779（用得少了）</p>
                             <p>邮箱：<a href="mailto:mailzwj@126.com">mailzwj@126.com</a></p>
+                            <p>Blog：<a href="//seejs.me">百码山庄</a></p>
                         </div>
                     </section>
                 </div>
